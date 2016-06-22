@@ -1,0 +1,66 @@
+body, html, iframe {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.column {
+  bottom: 0;
+  display: table;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  width: 25%;
+}
+
+.content-wrap {
+  display: table;
+  height: 100%;
+  left: 25%;
+  padding: 0 1.5%;
+  position: absolute;
+  right: 75%;
+  width: calc(50% - 1.5% * 2);
+}
+
+.content-wrap > * {
+  display: table-row;
+}
+
+.column.left {
+  left: 0;
+  text-align: left;
+}
+
+.column.right {
+  right: 0;
+  text-align: right;
+}
+
+.item-wrap-outer {
+  display: table-row;
+}
+
+.edge-padding {
+  height: 5%;
+}
+
+.item-wrap {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.item {
+  color: #333;
+  height: 65%;
+  width: 100%;
+  margin: auto auto;
+  vertical-align: middle;
+}
