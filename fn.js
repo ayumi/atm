@@ -7,5 +7,11 @@ Atm.fn = new Map([
     () => {
       document.getElementById('content').innerText = 'HELLO WORLD!!!';
     }
+  ],
+  [
+    'nyan-cat',
+    () => {
+      document.getElementById('content').innerHTML = '<img src="/nyan-cat-coin.gif"/>';
+    }
   ]
 ]);

@@ -7,12 +7,12 @@ Atm.menus = new Map([
     [
       new Map([
         ['action', 'menu'],
-        ['label', 'Menu 1'],
+        ['label', 'Door #1'],
         ['target', 'menu1']
       ]),
       new Map([
         ['action', 'menu'],
-        ['label', 'Menu 2'],
+        ['label', 'Door #2'],
         ['target', 'menu2']
       ]),
       new Map([
@@ -47,6 +47,11 @@ Atm.menus = new Map([
         ['action', 'menu'],
         ['label', 'Back'],
         ['target', 'index']
+      ]),
+      new Map([
+        ['action', 'fn'],
+        ['label', 'Withdraw kawaii'],
+        ['target', 'nyan-cat']
       ])
     ]
   ]
