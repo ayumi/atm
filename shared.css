@@ -42,22 +42,22 @@ body {
   text-align: right;
 }
 
-.item-wrap-outer {
+.menu-wrap-outer {
   display: table-row;
 }
 
 .edge-padding {
-  height: 5%;
+  height: 0%;
 }
 
-.item-wrap {
+.menu-wrap {
   display: flex;
   height: 100%;
   width: 100%;
   position: relative;
 }
 
-.item {
+.menu {
   color: #333;
   height: 65%;
   width: 100%;
