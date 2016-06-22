@@ -26,8 +26,9 @@ Atm.App = class {
 
   initMenuHotkeys () {
     document.body.addEventListener('keydown', (event) => {
-      // Hardcoded to F keys. keyCode of F1 is 112
-      let index = event.keyCode - 112;
+      // ATM menu keys are A-H
+      // keyCode of A is 66
+      let index = event.keyCode - 65;
       let menuEvent = new Event('click');
       this.getMenuElByIndex(index).dispatchEvent(menuEvent);
     });
