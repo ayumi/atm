@@ -9,6 +9,7 @@ Atm.App = class {
 
   init () {
     this.initMenuActions();
+    this.initMenuHotkeys();
     this.activeMenuId = null;
     this.visitMenu('index');
   }
@@ -21,6 +22,15 @@ Atm.App = class {
         window.app.menuPressed(thisI);
       });
     }
+  }
+
+  initMenuHotkeys () {
+    document.body.addEventListener('keydown', (event) => {
+      // Hardcoded to F keys. keyCode of F1 is 112
+      let index = event.keyCode - 112;
+      let menuEvent = new Event('click');
+      this.getMenuElByIndex(index).dispatchEvent(menuEvent);
+    });
   }
 
   menuPressed (index) {
