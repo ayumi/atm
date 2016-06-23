@@ -8,6 +8,9 @@ Atm.App = class {
   }
 
   init () {
+    this.el = {
+      content: document.getElementById('content')
+    };
     this.initMenuActions();
     this.initMenuHotkeys();
     this.activeMenuId = null;
@@ -35,9 +38,9 @@ Atm.App = class {
   }
 
   menuPressed (index) {
-    let menu = this.getActiveMenu()[index];
-    let action = menu.get('action');
-    let target = menu.get('target');
+    let options = this.getActiveMenu().get('options')[index];
+    let action = options.get('action');
+    let target = options.get('target');
     switch (action) {
       case 'menu':
         this.visitMenu(target);
@@ -57,8 +60,12 @@ Atm.App = class {
 
   visitMenu (menuId) {
     this.activeMenuId = menuId;
+    // Update content
+    let menu = this.menus.get(menuId);
+    this.el.content.innerHTML = menu.get('content');
+    // Update options
     let i = 0;
-    let menuOptions = this.menus.get(menuId);
+    let menuOptions = menu.get('options');
     for (let menu of menuOptions) {
       if (menu.get('action') === null) {
         this.setMenuVisibility(i, 'hidden');
