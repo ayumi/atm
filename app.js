@@ -11,10 +11,41 @@ Atm.App = class {
     this.el = {
       content: document.getElementById('content')
     };
+
     this.initMenuActions();
     this.initMenuHotkeys();
+    this.initInactivityTimer();
+
+    document.onkeypress = this.onKeyPress.bind(this);
+    document.body.style.cursor = 'none';
+
     this.activeMenuId = null;
     this.visitMenu('index');
+  }
+
+  logout () {
+    if (this.activeMenuId !== 'index') {
+      this.visitMenu('logout');
+      setTimeout(this.visitMenu.bind(this), 3000, 'index')
+    }
+  }
+
+  onKeyPress () {
+    let audio = new Audio('sounds/beep.mp3');
+    audio.play();
+    this.resetInactivityTimer();
+  }
+
+  resetInactivityTimer() {
+    clearTimeout(this.inactivityTimer);
+    this.inactivityTimer = setTimeout(this.logout.bind(this), 30000);
+  }
+
+  initInactivityTimer () {
+    this.inactivityTimer = null;
+    window.onload = this.resetInactivityTimer.bind(this);
+    document.onmousemove = this.resetInactivityTimer.bind(this);
+    this.resetInactivityTimer();
   }
 
   initMenuActions () {
@@ -43,8 +74,6 @@ Atm.App = class {
   menuPressed (index) {
     let buttan = this.getMenuElByIndex(index);
     buttan.className = 'menu pressed';
-    let audio = new Audio('sounds/beep.mp3');
-    audio.play();
     setTimeout(this.menuPressedAction.bind(this), 400, index);
   }
 
@@ -70,6 +99,10 @@ Atm.App = class {
   }
 
   visitMenu (menuId) {
+    if (menuId === 'last') {
+      menuId = this.lastMenuId;
+    }
+    this.lastMenuId = this.activeMenuId;
     this.activeMenuId = menuId;
     // Update content
     let menu = this.menus.get(menuId);

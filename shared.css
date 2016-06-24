@@ -35,7 +35,6 @@ body {
 }
 
 .content {
-  height: 100%;
   left: 25%;
   padding: 0 1.5%;
   position: absolute;
@@ -49,6 +48,11 @@ body {
   right: 0;
   padding: 0;
   width: 100%;
+}
+
+.content.vcenter {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .column.left {

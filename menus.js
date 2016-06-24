@@ -11,7 +11,11 @@ Atm.menus = new Map([
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([['action', null]]),
-        new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Select Language'],
+          ['target', 'language-select']
+        ]),
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([['action', null]]),
@@ -20,6 +24,24 @@ Atm.menus = new Map([
           ['label', 'Forgot Card'],
           ['target', 'forgot-card']
         ])
+      ]]
+    ])
+  ],
+
+  [
+    'logout',
+    new Map([
+      ['content', '<h1>Transaction cancelled due to inactivity</h1>'],
+      ['contentClass', 'vcenter wide'],
+      ['options', [
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]])
       ]]
     ])
   ],
@@ -59,12 +81,44 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'No hablo espanol'],
-          ['target', 'account-entry']
+          ['target', 'language-select']
         ])
       ]]
     ])
   ],
 
+  [
+    'language-select',
+    new Map([
+      ['content', "<h3>Language De Change-o</h3>"],
+      ['options', [
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'British'],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Canadian'],
+          ['target', 'account-entry']
+        ]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', "L33t"],
+          ['target', 'last']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Braille'],
+          ['target', 'account-entry']
+        ]),
+        new Map([['action', null]])
+      ]]
+    ])
+  ],
   [
     'account-entry',
     new Map([
