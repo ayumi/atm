@@ -5,51 +5,70 @@ Atm.menus = new Map([
   [
     'index',
     new Map([
-      ['content', '<h1>main menu</h1>'],
+      ['content', '<h1>Welcome</h1><h2>To Priceless</h2><p>Please insert card for service'],
+      ['contentClass', 'wide'],
       ['options', [
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', 'Door #1'],
-          ['target', 'menu1']
-        ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Door #2'],
-          ['target', 'menu2']
-        ]),
-        new Map([
-          ['action', null]
-        ]),
-        new Map([
-          ['action', null]
-        ]),
-        new Map([
-          ['action', 'fn'],
-          ['label', 'Say hi to the world'],
-          ['target', 'hello-world']
+          ['label', 'Forgot Card'],
+          ['target', 'forgot-card']
         ])
       ]]
     ])
   ],
 
   [
-    'menu1',
+    'forgot-card',
     new Map([
-      ['content', '<h2>menu1</h2>'],
+      ['content', "<h3>Please explain why you don't have your card</h3><br><br><p>This will affect your credit score</p>"],
       ['options', [
+        new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', 'Back'],
-          ['target', 'index']
+          ['label', 'Forgetful'],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Relying on partner to save money'],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Was a term of your plea bargain avoiding jail for financial crimes'],
+          ['target', 'account-entry']
+        ]),
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Lost in the river'],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Drunk'],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'High'],
+          ['target', 'account-entry']
         ])
       ]]
     ])
   ],
 
   [
-    'menu2',
+    'account-entry',
     new Map([
-      ['content', '<h2>menu2</h2>'],
+      ['content', '<h2>Card reader malfunction</h2>'],
       ['options', [
         new Map([
           ['action', 'menu'],
@@ -58,7 +77,7 @@ Atm.menus = new Map([
         ]),
         new Map([
           ['action', 'fn'],
-          ['label', 'Withdraw kawaii'],
+          ['label', 'kawaii'],
           ['target', 'nyan-cat']
         ])
       ]]

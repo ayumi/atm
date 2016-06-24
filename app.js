@@ -29,11 +29,14 @@ Atm.App = class {
 
   initMenuHotkeys () {
     document.body.addEventListener('keydown', (event) => {
-      // ATM menu keys are A-H
-      // keyCode of A is 66
+      // ATM menu keys are "a"-"h"
+      // keyCode of "a" is 66
       let index = event.keyCode - 65;
       let menuEvent = new Event('click');
-      this.getMenuElByIndex(index).dispatchEvent(menuEvent);
+      let menuOption = this.getMenuElByIndex(index);
+      if (menuOption) {
+        menuOption.dispatchEvent(menuEvent);
+      }
     });
   }
 
@@ -62,22 +65,29 @@ Atm.App = class {
     this.activeMenuId = menuId;
     // Update content
     let menu = this.menus.get(menuId);
+    this.renderMenu(menu);
+  }
+
+  renderMenu (menu) {
+    let action, el, option, visibility;
     this.el.content.innerHTML = menu.get('content');
-    // Update options
-    let i = 0;
+    let contentClass = menu.get('contentClass');
+    this.el.content.className = `content ${contentClass}`;
+
     let menuOptions = menu.get('options');
-    for (let menu of menuOptions) {
-      if (menu.get('action') === null) {
-        this.setMenuVisibility(i, 'hidden');
-      } else {
-        let el = this.getMenuElByIndex(i);
-        el.innerText = menu.get('label');
-        this.setMenuVisibility(i, 'visible');
+    for (let i = 0; i < this.menuMax; i++) {
+      option = menuOptions[i];
+      if (option) {
+        action = option.get('action')
       }
-      i++;
-    }
-    for (; i < this.menuMax; i++) {
-      this.setMenuVisibility(i, 'hidden');
+      if (option && action) {
+        el = this.getMenuElByIndex(i);
+        el.innerText = option.get('label');
+        visibility = 'visible';
+      } else {
+        visibility = 'hidden';
+      }
+      this.setMenuVisibility(i, visibility);
     }
   }
 
