@@ -53,12 +53,12 @@ Atm.menus = new Map([
         ]),
         new Map([
           ['action', 'menu'],
-          ['label', 'The DAO'],
+          ['label', 'def dao(): dao()'],
           ['target', 'account-entry']
         ]),
         new Map([
           ['action', 'menu'],
-          ['label', 'No hablo español'],
+          ['label', 'No hablo espanol'],
           ['target', 'account-entry']
         ])
       ]]

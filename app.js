@@ -41,6 +41,14 @@ Atm.App = class {
   }
 
   menuPressed (index) {
+    let buttan = this.getMenuElByIndex(index);
+    buttan.className = 'menu pressed';
+    let audio = new Audio('sounds/beep.mp3');
+    audio.play();
+    setTimeout(this.menuPressedAction.bind(this), 400, index);
+  }
+
+  menuPressedAction (index) {
     let options = this.getActiveMenu().get('options')[index];
     let action = options.get('action');
     let target = options.get('target');
@@ -83,6 +91,7 @@ Atm.App = class {
       if (option && action) {
         el = this.getMenuElByIndex(i);
         el.innerText = option.get('label');
+        el.className = 'menu';
         visibility = 'visible';
       } else {
         visibility = 'hidden';
