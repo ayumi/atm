@@ -32,23 +32,7 @@ Atm.menus = new Map([
         new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', 'Forgetful'],
-          ['target', 'account-entry']
-        ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Relying on partner to save money'],
-          ['target', 'account-entry']
-        ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Was a term of your plea bargain avoiding jail for financial crimes'],
-          ['target', 'account-entry']
-        ]),
-        new Map([['action', null]]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Lost in the river'],
+          ['label', 'The river'],
           ['target', 'account-entry']
         ]),
         new Map([
@@ -59,6 +43,22 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'High'],
+          ['target', 'account-entry']
+        ]),
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', "I don't believe in property"],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'The DAO'],
+          ['target', 'account-entry']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'No hablo español'],
           ['target', 'account-entry']
         ])
       ]]
