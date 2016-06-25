@@ -16,9 +16,11 @@ Atm.App = class {
     this.initMenuHotkeys();
     this.initInactivityTimer();
 
-    document.onkeypress = this.onKeyPress.bind(this);
+    document.body.addEventListener('click', this.onKeyPress.bind(this));
+    document.body.addEventListener('keypress', this.onKeyPress.bind(this));
     document.body.style.cursor = 'none';
 
+    this.langFn = Atm.lang.get('normcore');
     this.activeMenuId = null;
     this.visitMenu('index');
   }
@@ -26,6 +28,7 @@ Atm.App = class {
   logout () {
     if (this.activeMenuId !== 'index') {
       this.visitMenu('logout');
+      this.langFn = Atm.lang.get('normcore');
       setTimeout(this.visitMenu.bind(this), 3000, 'index')
     }
   }
@@ -43,8 +46,8 @@ Atm.App = class {
 
   initInactivityTimer () {
     this.inactivityTimer = null;
-    window.onload = this.resetInactivityTimer.bind(this);
-    document.onmousemove = this.resetInactivityTimer.bind(this);
+    document.body.addEventListener('load', this.resetInactivityTimer.bind(this));
+    document.body.addEventListener('mousemove', this.resetInactivityTimer.bind(this));
     this.resetInactivityTimer();
   }
 
@@ -111,7 +114,10 @@ Atm.App = class {
 
   renderMenu (menu) {
     let action, el, option, visibility;
-    this.el.content.innerHTML = menu.get('content');
+
+    // Interpolate fns in content templates, e.g. for languages
+    let contentLiteral = "`" + menu.get('content') + "`";
+    this.el.content.innerHTML = eval(contentLiteral);
     let contentClass = menu.get('contentClass');
     this.el.content.className = `content ${contentClass}`;
 
