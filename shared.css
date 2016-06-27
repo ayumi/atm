@@ -88,3 +88,8 @@ body {
   margin: auto auto;
   vertical-align: middle;
 }
+
+/* Applied to .menu before first init */
+.hidden {
+  display: none;
+}

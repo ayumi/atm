@@ -1,29 +1,16 @@
 /*eslint-env es6 */
 
-// Language functions
+// Language functions.
+// Each function should implement String.replace newSubStr str/functions.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 Atm.lang = new Map([
   [
-    'normcore',
-    (str) => {
-      return str; 
-    }
-  ],
-  [
-    'leet',
-    (str) => {
-      return str.replace(/[a-z]/g,function f(a){return "4BCD3F6H1JKLMN0PQR57"[parseInt(a, 36)-10] || a.replace(/[a-t]/gi,f)}); 
-    }
-  ],
-  [
-    'canadian',
-    (str) => {
-      return str + ', eh?';
-    }
-  ],
-  [
     'braille',
-    (str) => {
-      let lookup = [
+    {
+      fn: (_, str) => {
+        return str.translate(this.mapping);
+      },
+      mapping: [
         ['1',   '⠼⠁'],
         ['2',   '⠼⠃'],
         ['3',   '⠼⠉'],
@@ -99,8 +86,35 @@ Atm.lang = new Map([
         ['\\[', '⠶'],
         ['-',   '⠤'],
         ["'",   '⠄'],
-      ];
-      return str.translate(lookup);
+      ]
+    }
+  ],
+
+  [
+    'canadian',
+    {
+      fn: (_, str) => {
+        return str + ', eh?';
+      }
+    }
+  ],
+
+  [
+    'leet',
+    {
+      fn: (_, str) => {
+        return str.replace(/[a-z]/g, Atm.lang.get('leet').mapping);
+      },
+      mapping: (a) => {
+        return "4BCD3F6H1JKLMN0PQR57"[parseInt(a, 36)-10] || a.replace(/[a-t]/gi, Atm.lang.get('leet').mapping);
+      }
+    }
+  ],
+
+  [
+    'normcore',
+    {
+      fn: '$1'
     }
   ]
 ]);

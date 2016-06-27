@@ -31,7 +31,7 @@ Atm.App = class {
     }.bind(this));
 
 
-    this.langFn = Atm.lang.get('normcore');
+    this.lang = Atm.lang.get('normcore');
     this.activeMenuId = null;
     this.visitMenu('index');
   }
@@ -46,7 +46,7 @@ Atm.App = class {
   logout () {
     if (this.activeMenuId !== 'index') {
       this.visitMenu('logout');
-      this.langFn = Atm.lang.get('normcore');
+      this.lang = Atm.lang.get('normcore');
       this.setFont("vt323");
       setTimeout(this.visitMenu.bind(this), 3000, 'index')
     }
@@ -132,11 +132,10 @@ Atm.App = class {
   }
 
   renderMenu (menu) {
-    let action, el, option, visibility;
+    let action, el, elLabel, option, visibility;
 
-    // Interpolate fns in content templates, e.g. for languages
-    let contentLiteral = "`" + menu.get('content') + "`";
-    this.el.content.innerHTML = eval(contentLiteral);
+    let content = menu.get('content');
+    this.el.content.innerHTML = this.localize(content);
     let contentClass = menu.get('contentClass');
     this.el.content.className = `content ${contentClass}`;
 
@@ -148,7 +147,8 @@ Atm.App = class {
       }
       if (option && action) {
         el = this.getMenuElByIndex(i);
-        el.innerText = this.langFn(option.get('label'));
+        elLabel = option.get('label');
+        el.innerText = this.localize(`{${elLabel}}`);
         el.className = 'menu';
         visibility = 'visible';
       } else {
@@ -164,6 +164,11 @@ Atm.App = class {
 
   setMenuVisibility (index, visibility) {
     return this.getMenuElByIndex(index).style.visibility = visibility;
+  }
+
+  // Localize menu content by interpolatig {}
+  localize (string) {
+    return string.replace(/\{(.*?)\}/g, this.lang.fn);
   }
 };
 

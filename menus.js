@@ -5,7 +5,7 @@ Atm.menus = new Map([
   [
     'index',
     new Map([
-      ['content', '<h1>${window.app.langFn("Welcome")}</h1><h2>${window.app.langFn("To Priceless")}</h2><p>${window.app.langFn("Please insert card for service")}</p>'],
+      ['content', '<h1>{Welcome}</h1><h2>{To Priceless}</h2><p>{Please insert card for service"}</p>'],
       ['contentClass', 'wide'],
       ['options', [
         new Map([['action', null]]),
@@ -31,7 +31,7 @@ Atm.menus = new Map([
   [
     'logout',
     new Map([
-      ['content', '<h2>${window.app.langFn("Transaction cancelled due to inactivity")}</h2>'],
+      ['content', '<h2>{Transaction cancelled due to inactivity}</h2>'],
       ['contentClass', 'vcenter wide'],
       ['options', [
         new Map([['action', null]]),
@@ -49,7 +49,7 @@ Atm.menus = new Map([
   [
     'forgot-card',
     new Map([
-      ['content', '<h3>${window.app.langFn("Please explain why you don\'t have your card")}</h3><br><br><p>${window.app.langFn("This will affect your credit score")}</p>'],
+      ['content', '<h3>{("Please explain why you don\'t have your card}</h3><br><br><p>{This will affect your credit score}</p>'],
       ['options', [
         new Map([['action', null]]),
         new Map([
@@ -90,7 +90,7 @@ Atm.menus = new Map([
   [
     'alcohol',
     new Map([
-      ['content', '<h2>${window.app.langFn("How many drinks did you have?")}</h2>'],
+      ['content', '<h2>{How many drinks did you have?}</h2>'],
       ['contentClass', 'wide'],
       ['options', [
         new Map([['action', null]]),
@@ -123,7 +123,7 @@ Atm.menus = new Map([
   [
     'belief',
     new Map([
-      ['content', '<h2>${window.app.langFn("Give according to your ability and you will recieve in proportion to your need</h2><br><br><p>HINT: Requisition a card from your closest capitalist pig, they will acquiesce to authority")}</p>'],
+      ['content', '<h2>{Give according to your ability and you will recieve in proportion to your need</h2><br><br><p>HINT: Requisition a card from your closest capitalist pig, they will acquiesce to authority}</p>'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
@@ -141,7 +141,7 @@ Atm.menus = new Map([
   [
     'high',
     new Map([
-      ['content', '<h2>${window.app.langFn("Please enter SWIMs level on a scale of 10 on the keypad in place of your pin.")}</h2><br><br><input type="text" name="fname">'],
+      ['content', '<h2>{Please enter SWIMs level on a scale of 10 on the keypad in place of your pin.}</h2><br><br><input type="text" name="fname">'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
@@ -159,7 +159,7 @@ Atm.menus = new Map([
   [
     'not-effective',
     new Map([
-      ['content', '<h2>${window.app.langFn("It\'s not very effective...")}</h2>'],
+      ['content', '<h2>{It\'s not very effective...}</h2>'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
@@ -176,7 +176,7 @@ Atm.menus = new Map([
   [
     'dao',
     new Map([
-      ['content', '<h2>${window.app.langFn("daoattacker offers you 1 million eth to oppose forks")}</h2>'],
+      ['content', '<h2>{daoattacker offers you 1 million eth to oppose forks}</h2>'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
@@ -201,7 +201,7 @@ Atm.menus = new Map([
   [
     'main-menu',
     new Map([
-      ['content', '<h3>${window.app.langFn("Please choose an option")}</h3>'],
+      ['content', '<h3>{Please choose an option}</h3>'],
       ['options', [
         new Map([['action', null]]),
         new Map([['action', null]]),
@@ -234,7 +234,7 @@ Atm.menus = new Map([
   [
     'fees-notice',
     new Map([
-      ['content', '<h3>${window.app.langFn("The operator of this ATM machine will charge a fee of $6:00 per transaction in addition to the average $340:00 that credit card companies make off merchant fees per American")}</h3>'],
+      ['content', '<h3>{The operator of this ATM machine will charge a fee of $6:00 per transaction in addition to the average $340:00 that credit card companies make off merchant fees per American}</h3>'],
       ['options', [
         new Map([['action', null]]),
         new Map([['action', null]]),
@@ -258,7 +258,7 @@ Atm.menus = new Map([
   [
     'change-menu',
     new Map([
-      ['content', '<h3>${window.app.langFn("Please choose the setting to change")}</h3>'],
+      ['content', '<h3>{Please choose the setting to change}</h3>'],
       ['options', [
         new Map([['action', null]]),
         new Map([
@@ -298,7 +298,7 @@ Atm.menus = new Map([
   [
     'language-select',
     new Map([
-      ['content', '<h3>${window.app.langFn("Language De Change-o")}</h3>'],
+      ['content', '<h3>{Language De Change-o}</h3>'],
       ['options', [
         new Map([['action', null]]),
         new Map([
@@ -338,7 +338,7 @@ Atm.menus = new Map([
   [
     'account-entry',
     new Map([
-      ['content', '<h2>${window.app.langFn("Card reader malfunction")}</h2>'],
+      ['content', '<h2>{Card reader malfunction}</h2>'],
       ['options', [
         new Map([
           ['action', 'menu'],

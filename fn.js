@@ -37,7 +37,7 @@ Atm.fn = new Map([
   [
     'language-normcore',
     () => {
-      window.app.langFn = Atm.lang.get('normcore');
+      window.app.lang = Atm.lang.get('normcore');
       window.app.setFont("vt323");
       window.app.visitMenu('last');
     }
@@ -45,7 +45,7 @@ Atm.fn = new Map([
   [
     'language-cockney',
     () => {
-      window.app.langFn = Atm.lang.get('cockney');
+      window.app.lang = Atm.lang.get('cockney');
       window.app.setFont("vt323");
       window.app.visitMenu('last');
     }
@@ -53,7 +53,7 @@ Atm.fn = new Map([
   [
     'language-canadian',
     () => {
-      window.app.langFn = Atm.lang.get('canadian');
+      window.app.lang = Atm.lang.get('canadian');
       window.app.setFont("vt323");
       window.app.visitMenu('last');
     }
@@ -61,7 +61,7 @@ Atm.fn = new Map([
   [
     'language-braille',
     () => {
-      window.app.langFn = Atm.lang.get('normcore');
+      window.app.lang = Atm.lang.get('normcore');
       window.app.setFont("braille");
       window.app.visitMenu('last');
     }
@@ -69,7 +69,7 @@ Atm.fn = new Map([
   [
     'language-l33t',
     () => {
-      window.app.langFn = Atm.lang.get('leet');
+      window.app.lang = Atm.lang.get('leet');
       window.app.setFont("vt323");
       window.app.visitMenu('last');
     }
