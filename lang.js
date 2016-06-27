@@ -15,6 +15,12 @@ Atm.lang = new Map([
     }
   ],
   [
+    'canadian',
+    (str) => {
+      return str + ', eh?';
+    }
+  ],
+  [
     'braille',
     (str) => {
       let lookup = [

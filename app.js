@@ -4,7 +4,6 @@ Atm.App = class {
   constructor (args) {
     this.menus = args.menus;
     this.menuMax = args.menuMax;
-    this.init();
   }
 
   init () {
@@ -20,15 +19,35 @@ Atm.App = class {
     document.body.addEventListener('keypress', this.onKeyPress.bind(this));
     document.body.style.cursor = 'none';
 
+    var f = new FontFace("braille", "url(fonts/braille/BRAILLE1.ttf)", {});
+    f.load().then(function (loadedFace) {
+      document.fonts.add(loadedFace);
+    });
+
+    var f = new FontFace("vt323", "url(fonts/vt323/vt323-regular.ttf)", {});
+    f.load().then(function (loadedFace) {
+      document.fonts.add(loadedFace);
+      this.setFont("vt323");
+    }.bind(this));
+
+
     this.langFn = Atm.lang.get('normcore');
     this.activeMenuId = null;
     this.visitMenu('index');
+  }
+
+  setFont (font) {
+    document.body.style.fontFamily = font;
+    for (let i = 0; i < this.menuMax; i++) {
+      this.getMenuElByIndex(i).style.fontFamily = font;
+    }
   }
 
   logout () {
     if (this.activeMenuId !== 'index') {
       this.visitMenu('logout');
       this.langFn = Atm.lang.get('normcore');
+      this.setFont("vt323");
       setTimeout(this.visitMenu.bind(this), 3000, 'index')
     }
   }
@@ -41,7 +60,7 @@ Atm.App = class {
 
   resetInactivityTimer() {
     clearTimeout(this.inactivityTimer);
-    this.inactivityTimer = setTimeout(this.logout.bind(this), 30000);
+    this.inactivityTimer = setTimeout(this.logout.bind(this), 10000);
   }
 
   initInactivityTimer () {
@@ -129,7 +148,7 @@ Atm.App = class {
       }
       if (option && action) {
         el = this.getMenuElByIndex(i);
-        el.innerText = option.get('label');
+        el.innerText = this.langFn(option.get('label'));
         el.className = 'menu';
         visibility = 'visible';
       } else {
@@ -148,7 +167,9 @@ Atm.App = class {
   }
 };
 
+document.body.style.setProperty("-webkit-transform", "rotate(-1deg)", null);
 window.app = new Atm.App({
   menus: Atm.menus,
   menuMax: 8
 });
+window.app.init();
