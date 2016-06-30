@@ -234,7 +234,7 @@ Atm.menus = new Map([
   [
     'fees-notice',
     new Map([
-      ['content', '<h3>{The operator of this ATM machine will charge a fee of $6:00 per transaction in addition to the average $340:00 that credit card companies make off merchant fees per American}</h3>'],
+      ['content', '<h3>{ The operator of this ATM machine will charge a fee of $6:00 per transaction in addition to the average $340:00 that credit card companies make off merchant fees per American}</h3>'],
       ['options', [
         new Map([['action', null]]),
         new Map([['action', null]]),

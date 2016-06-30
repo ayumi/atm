@@ -60,13 +60,12 @@ Atm.App = class {
 
   resetInactivityTimer() {
     clearTimeout(this.inactivityTimer);
-    this.inactivityTimer = setTimeout(this.logout.bind(this), 10000);
+    this.inactivityTimer = setTimeout(this.logout.bind(this), 30000);
   }
 
   initInactivityTimer () {
     this.inactivityTimer = null;
     document.body.addEventListener('load', this.resetInactivityTimer.bind(this));
-    document.body.addEventListener('mousemove', this.resetInactivityTimer.bind(this));
     this.resetInactivityTimer();
   }
 
