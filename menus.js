@@ -5,7 +5,7 @@ Atm.menus = new Map([
   [
     'index',
     new Map([
-      ['content', '<h1>{Welcome}</h1><h2>{To Priceless}</h2><p>{Please insert card for service"}</p>'],
+      ['content', '<h1>{Welcome}</h1><h2>{To Priceless}</h2><p>{Please insert card for service}</p>'],
       ['contentClass', 'wide'],
       ['options', [
         new Map([['action', null]]),
@@ -49,33 +49,33 @@ Atm.menus = new Map([
   [
     'forgot-card',
     new Map([
-      ['content', '<h3>{("Please explain why you don\'t have your card}</h3><br><br><p>{This will affect your credit score}</p>'],
+      ['content', '<h3>{Please explain why you don\'t have your card}</h3><br><br><p>{This will affect your credit score}</p>'],
       ['options', [
         new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', 'I lost it in the river'],
+          ['label', 'Lost in the river'],
           ['target', 'account-entry']
         ]),
         new Map([
           ['action', 'menu'],
-          ['label', 'Alcohol is a bitch'],
+          ['label', 'Drunk'],
           ['target', 'alcohol']
         ]),
         new Map([
           ['action', 'menu'],
-          ['label', 'I blame SWIM'],
+          ['label', 'SWIM'],
           ['target', 'high']
         ]),
         new Map([['action', null]]),
         new Map([
           ['action', 'fn'],
-          ['label', "I don't believe in property rights"],
+          ['label', "I don't believe in property"],
           ['target', 'inter-belief']
         ]),
         new Map([
           ['action', 'menu'],
-          ['label', 'I invested all my money in the DAO'],
+          ['label', 'Lost all my money in the DAO'],
           ['target', 'dao']
         ]),
         new Map([
@@ -98,19 +98,19 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', '1-2'],
-          ['target', 'dao']
+          ['target', 'main-menu']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '3-5'],
-          ['target', 'dao']
+          ['target', 'main-menu']
         ]),
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
           ['label', '5-8'],
-          ['target', 'dao']
+          ['target', 'main-menu']
         ]),
         new Map([
           ['action', 'fn'],
@@ -138,20 +138,41 @@ Atm.menus = new Map([
     ])
   ],
 
+  // TODO: Show cool pics
   [
     'high',
     new Map([
-      ['content', '<h2>{Please enter SWIMs level on a scale of 10 on the keypad in place of your pin.}</h2><br><br><input type="text" name="fname">'],
+      ['content', '<h2>{:) ?}</h2>'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]])
+        new Map([
+          ['action', 'menu'],
+          ['label', '+/-'],
+          ['target', 'main-menu']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', '+'],
+          ['target', 'main-menu']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', '++'],
+          ['target', 'main-menu']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', '+++'],
+          ['target', 'main-menu']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', '++++'],
+          ['target', 'main-menu']
+        ]),
       ]]
     ])
   ],
@@ -201,7 +222,7 @@ Atm.menus = new Map([
   [
     'main-menu',
     new Map([
-      ['content', '<h3>{Please choose an option}</h3>'],
+      ['content', '<h2>Main menu</h2><h3>{Please choose an option}</h3>'],
       ['options', [
         new Map([['action', null]]),
         new Map([['action', null]]),
@@ -213,7 +234,7 @@ Atm.menus = new Map([
         new Map([
           ['action', 'fn'],
           ['label', 'Inquiry'],
-          ['target', 'inquery']
+          ['target', 'inquiry']
         ]),
         new Map([['action', null]]),
         new Map([['action', null]]),
@@ -234,15 +255,15 @@ Atm.menus = new Map([
   [
     'fees-notice',
     new Map([
-      ['content', '<h3>{ The operator of this ATM machine will charge a fee of $6:00 per transaction in addition to the average $340:00 that credit card companies make off merchant fees per American}</h3>'],
+      ['content', '<p>{The operator of this banking machine will charge a fee of:}</p><p>{$6.00 for this transaction.}</p><p>{This fee is in addition to the average $340 per year credit card companies make off merchant fees per American}</p>'],
       ['options', [
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', "Cancel"],
-          ['target', 'fees-notice']
+          ['label', 'No thanks'],
+          ['target', null]
         ]),
         new Map([['action', null]]),
         new Map([['action', null]]),
@@ -313,7 +334,7 @@ Atm.menus = new Map([
         ]),
         new Map([
           ['action', 'fn'],
-          ['label', 'Norecore'],
+          ['label', 'Normcore'],
           ['target', 'language-normcore']
         ]),
         new Map([['action', null]]),

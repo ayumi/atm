@@ -10,14 +10,15 @@ Atm.App = class {
     this.el = {
       content: document.getElementById('content')
     };
+    this.audio = {
+      beep: new Audio('sounds/beep.mp3')
+    };
 
     this.initMenuActions();
     this.initMenuHotkeys();
     this.initInactivityTimer();
 
-    document.body.addEventListener('click', this.onKeyPress.bind(this));
-    document.body.addEventListener('keypress', this.onKeyPress.bind(this));
-    document.body.style.cursor = 'none';
+    // document.body.style.cursor = 'none';
 
     var f = new FontFace("braille", "url(fonts/braille/BRAILLE1.ttf)", {});
     f.load().then(function (loadedFace) {
@@ -29,7 +30,6 @@ Atm.App = class {
       document.fonts.add(loadedFace);
       this.setFont("vt323");
     }.bind(this));
-
 
     this.lang = Atm.lang.get('normcore');
     this.activeMenuId = null;
@@ -52,14 +52,15 @@ Atm.App = class {
     }
   }
 
-  onKeyPress () {
-    let audio = new Audio('sounds/beep.mp3');
-    audio.play();
-    this.resetInactivityTimer();
+  beep () {
+    this.audio.beep.currentTime = 0;
+    this.audio.beep.play();
   }
 
   resetInactivityTimer() {
-    clearTimeout(this.inactivityTimer);
+    // TODO: Reenable
+    return;
+    clearTimeout(this.inactivityTimer)
     this.inactivityTimer = setTimeout(this.logout.bind(this), 30000);
   }
 
@@ -86,7 +87,7 @@ Atm.App = class {
       let index = event.keyCode - 65;
       let menuEvent = new Event('click');
       let menuOption = this.getMenuElByIndex(index);
-      if (menuOption) {
+      if (menuOption && this.isElVisible(menuOption)) {
         menuOption.dispatchEvent(menuEvent);
       }
     });
@@ -95,6 +96,7 @@ Atm.App = class {
   menuPressed (index) {
     let buttan = this.getMenuElByIndex(index);
     buttan.className = 'menu pressed';
+    this.beep();
     setTimeout(this.menuPressedAction.bind(this), 400, index);
   }
 
@@ -102,6 +104,9 @@ Atm.App = class {
     let options = this.getActiveMenu().get('options')[index];
     let action = options.get('action');
     let target = options.get('target');
+    if (target === null) {
+      return;
+    }
     switch (action) {
       case 'menu':
         this.visitMenu(target);
@@ -144,11 +149,11 @@ Atm.App = class {
       if (option) {
         action = option.get('action')
       }
+      el = this.getMenuElByIndex(i);
+      el.className = 'menu';
       if (option && action) {
-        el = this.getMenuElByIndex(i);
         elLabel = option.get('label');
         el.innerText = this.localize(`{${elLabel}}`);
-        el.className = 'menu';
         visibility = 'visible';
       } else {
         visibility = 'hidden';
@@ -161,6 +166,10 @@ Atm.App = class {
     return document.getElementById(`menu-${index}`);
   }
 
+  isElVisible (el) {
+    return el.style.visibility === 'visible';
+  }
+
   setMenuVisibility (index, visibility) {
     return this.getMenuElByIndex(index).style.visibility = visibility;
   }
@@ -171,7 +180,6 @@ Atm.App = class {
   }
 };
 
-document.body.style.setProperty("-webkit-transform", "rotate(-1deg)", null);
 window.app = new Atm.App({
   menus: Atm.menus,
   menuMax: 8
