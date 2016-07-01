@@ -302,11 +302,12 @@ Atm.menus = new Map([
         //   ['label', 'Talk to customer support'],
         //   ['target', 'change-menu']
         // ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Change life'],
-          ['target', 'change-menu']
-        ]),
+        // new Map([
+        //   ['action', 'menu'],
+        //   ['label', 'Change life'],
+        //   ['target', 'change-menu']
+        // ]),
+        new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
           ['label', 'Disco mode'],
