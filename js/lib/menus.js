@@ -55,7 +55,7 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Lost in the river'],
-          ['target', 'account-entry']
+          ['target', 'account-fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
@@ -142,7 +142,7 @@ Atm.menus = new Map([
   [
     'high',
     new Map([
-      ['content', '<h2>{:) ?}</h2>'],
+      ['content', '<h2>{}</h2>'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
@@ -345,17 +345,17 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Money'],
-          ['target', 'account-entry']
+          ['target', 'account-fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', 'Pin'],
-          ['target', 'account-entry']
+          ['target', 'account-fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', 'Alignment'],
-          ['target', 'account-entry']
+          ['target', 'account-fees-notice']
         ]),
         new Map([['action', null]]),
         new Map([
@@ -366,7 +366,7 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Sexuality'],
-          ['target', 'account-entry']
+          ['target', 'account-fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
@@ -418,15 +418,11 @@ Atm.menus = new Map([
       ['content', '<h3>{Language De Change-o}</h3>'],
       ['options', [
         new Map([['action', null]]),
+        new Map([['action', null]]),
         new Map([
           ['action', 'fn'],
           ['label', 'L33t'],
           ['target', 'language-l33t']
-        ]),
-        new Map([
-          ['action', 'fn'],
-          ['label', 'Cockney'],
-          ['target', 'language-cockney']
         ]),
         new Map([
           ['action', 'fn'],
