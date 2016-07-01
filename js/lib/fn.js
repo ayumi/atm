@@ -11,7 +11,7 @@ Atm.fn = new Map([
   [
     'nyan-cat',
     () => {
-      document.getElementById('content').innerHTML = '<img src="/nyan-cat-coin.gif"/>';
+      document.getElementById('content').innerHTML = '<img src="images/nyan-cat-coin.gif"/>';
     }
   ],
   [
@@ -39,6 +39,12 @@ Atm.fn = new Map([
     () => {
       window.app.visitMenu('inter-saving');
       setTimeout(window.app.visitMenu.bind(window.app), 5000, 'main-menu');
+    }
+  ],
+  [
+    'inter-high',
+    () => {
+      setTimeout(window.app.visitMenu.bind(window.app), 5000, 'fees-notice');
     }
   ],
   [

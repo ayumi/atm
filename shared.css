@@ -64,6 +64,10 @@ body {
   transform: translateY(-50%);
 }
 
+.anchor-right {
+  right: 0;
+}
+
 .column.left {
   left: 0;
   text-align: left;

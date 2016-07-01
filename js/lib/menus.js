@@ -138,7 +138,6 @@ Atm.menus = new Map([
     ])
   ],
 
-  // TODO: Show cool pics
   [
     'high',
     new Map([
@@ -151,29 +150,79 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', '+/-'],
-          ['target', 'fees-notice']
+          ['target', 'inter-high-0']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '+'],
-          ['target', 'fees-notice']
+          ['target', 'inter-high-1']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '++'],
-          ['target', 'fees-notice']
+          ['target', 'inter-high-2']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '+++'],
-          ['target', 'fees-notice']
+          ['target', 'inter-high-3']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '++++'],
-          ['target', 'fees-notice']
+          ['target', 'inter-high-4']
         ]),
       ]]
+    ])
+  ],
+
+  [
+    'inter-high-0',
+    new Map([
+      ['content', '<img src="images/shiba.jpg"/>'],
+      ['contentClass', 'wide tall'],
+      ['options', []],
+      ['onloadFn', 'inter-high']
+    ])
+  ],
+
+  [
+    'inter-high-1',
+    new Map([
+      ['content', '<img src="images/high1.jpg"/>'],
+      ['contentClass', 'wide tall'],
+      ['options', []],
+      ['onloadFn', 'inter-high']
+    ])
+  ],
+
+  [
+    'inter-high-2',
+    new Map([
+      ['content', '<img src="images/high2.png"/>'],
+      ['contentClass', 'wide tall'],
+      ['options', []],
+      ['onloadFn', 'inter-high']
+    ])
+  ],
+
+  [
+    'inter-high-3',
+    new Map([
+      ['content', '<img src="images/high3.jpg"/>'],
+      ['contentClass', 'wide tall'],
+      ['options', []],
+      ['onloadFn', 'inter-high']
+    ])
+  ],
+
+  [
+    'inter-high-4',
+    new Map([
+      ['content', '<img src="images/high4.jpg"/>'],
+      ['contentClass', 'wide tall'],
+      ['options', []],
+      ['onloadFn', 'inter-high']
     ])
   ],
 
