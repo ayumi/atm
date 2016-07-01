@@ -38,7 +38,7 @@ Atm.fn = new Map([
     'inter-saving',
     () => {
       window.app.visitMenu('inter-saving');
-      setTimeout(window.app.visitMenu.bind(window.app), 5000, 'main-menu');
+      setTimeout(window.app.visitMenu.bind(window.app), 2000, 'main-menu');
     }
   ],
   [
