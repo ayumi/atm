@@ -47,6 +47,16 @@ Atm.menus = new Map([
   ],
 
   [
+    'exit',
+    new Map([
+      ['content', '<h2>{Thanks for your money sucker!!!}</h2>'],
+      ['contentClass', 'vcenter wide'],
+      ['options', []],
+      ['onloadFn', 'inter-logout']
+    ])
+  ],
+
+  [
     'forgot-card',
     new Map([
       ['content', '<h3>{Please explain why you don\'t have your card}</h3><br><br><p>{This will affect your credit score}</p>'],
@@ -264,6 +274,7 @@ Atm.menus = new Map([
     new Map([
       ['content', '<h2>{Please choose an action}</h2>'],
       ['options', [
+        new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
           ['label', 'Withdraw'],
@@ -274,21 +285,23 @@ Atm.menus = new Map([
           ['label', 'Bible inquiry'],
           ['target', 'bible']
         ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Balance Inquiry'],
-          ['target', 'fees-notice']
-        ]),
-        new Map([
-          ['action', 'fn'],
-          ['label', 'Inquiry'],
-          ['target', 'inquiry']
-        ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Talk to customer support'],
-          ['target', 'change-menu']
-        ]),
+        new Map([['action', null]]),
+        // new Map([
+        //   ['action', 'menu'],
+        //   ['label', 'Balance Inquiry'],
+        //   ['target', 'fees-notice']
+        // ]),
+        new Map([['action', null]]),
+        // new Map([
+        //   ['action', 'fn'],
+        //   ['label', 'Inquiry'],
+        //   ['target', 'inquiry']
+        // ]),
+        // new Map([
+        //   ['action', 'menu'],
+        //   ['label', 'Talk to customer support'],
+        //   ['target', 'change-menu']
+        // ]),
         new Map([
           ['action', 'menu'],
           ['label', 'Change life'],
@@ -298,6 +311,11 @@ Atm.menus = new Map([
           ['action', 'menu'],
           ['label', 'Disco mode'],
           ['target', 'disco']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Exit'],
+          ['target', 'exit']
         ])
       ]],
       ['onloadFn', 'main-menu-init']

@@ -48,6 +48,12 @@ Atm.fn = new Map([
     }
   ],
   [
+    'inter-logout',
+    () => {
+      setTimeout(window.app.visitMenu.bind(window.app), 4000, 'index');
+    }
+  ],
+  [
     'bible',
     () => {
       let i = Math.floor(Math.random() * Atm.bible.length);
