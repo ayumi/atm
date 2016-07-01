@@ -13,6 +13,7 @@ Atm.App = class {
     this.audio = {
       beep: new Audio('sounds/beep.mp3')
     };
+    this.etc = {};
 
     this.initMenuActions();
     this.initMenuHotkeys();
@@ -101,6 +102,7 @@ Atm.App = class {
   }
 
   menuPressedAction (index) {
+    this.getMenuElByIndex(index).className = 'menu';
     let options = this.getActiveMenu().get('options')[index];
     let action = options.get('action');
     let target = options.get('target');
@@ -133,6 +135,11 @@ Atm.App = class {
     // Update content
     let menu = this.menus.get(menuId);
     this.renderMenu(menu);
+    // Perform callback
+    let onloadFn = menu.get('onloadFn');
+    if (onloadFn) {
+      Atm.fn.get(onloadFn)();
+    }
   }
 
   renderMenu (menu) {

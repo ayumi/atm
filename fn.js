@@ -29,9 +29,26 @@ Atm.fn = new Map([
     }
   ],
   [
-    'inquiry',
+    'inter-saving',
     () => {
-      document.getElementById('content').innerHTML = '<p>Your balance: 0x' + Math.random().toString(16).substring(7) + '</p><b><b><p>Your outlook: Ask again later</p><b><b>Your bible verse: No, in all these things we are more than conquerors through him who loved us.</p>'
+      window.app.visitMenu('inter-saving');
+      setTimeout(window.app.visitMenu.bind(window.app), 5000, 'main-menu');
+    }
+  ],
+  [
+    'bible',
+    () => {
+      let i = Math.floor(Math.random() * Atm.bible.length);
+      document.getElementById('verse').innerHTML = window.app.localize(Atm.bible[i]);
+      window.app.etc.bibleScore += 1;
+      document.getElementById('score').innerText = Math.round(Math.pow(Math.E, window.app.etc.bibleScore)) - 1;
+    }
+  ],
+  [
+    'bible-init',
+    () => {
+      // The first bible() increments.
+      window.app.etc.bibleScore = -1;
     }
   ],
   [
@@ -77,7 +94,7 @@ Atm.fn = new Map([
   [
     '8drinks',
     () => {
-      document.body.style.setProperty("-webkit-transform", "rotate(0deg)", null);
+      // document.body.style.setProperty("-webkit-transform", "rotate(0deg)", null);
       window.app.visitMenu('main-menu');
     }
   ]

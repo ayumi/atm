@@ -98,19 +98,19 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', '1-2'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '3-5'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([['action', null]]),
         new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
           ['label', '5-8'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([
           ['action', 'fn'],
@@ -123,7 +123,7 @@ Atm.menus = new Map([
   [
     'belief',
     new Map([
-      ['content', '<h2>{Give according to your ability and you will recieve in proportion to your need</h2><br><br><p>HINT: Requisition a card from your closest capitalist pig, they will acquiesce to authority}</p>'],
+      ['content', '<h2>{Give according to your ability and you will recieve in proportion to your need}</h2><br><br><p>{HINT: Requisition a card from your closest capitalist pig, they will acquiesce to authority}</p>'],
       ['contentClass', 'vcenter'],
       ['options', [
         new Map([['action', null]]),
@@ -151,47 +151,38 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', '+/-'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '+'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '++'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '+++'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
         new Map([
           ['action', 'menu'],
           ['label', '++++'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
       ]]
     ])
   ],
 
   [
-    'not-effective',
+    'inter-saving',
     new Map([
-      ['content', '<h2>{It\'s not very effective...}</h2>'],
+      ['content', '<h2>{Saving your preferences}</h2>'],
       ['contentClass', 'vcenter'],
-      ['options', [
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
-        new Map([['action', null]])
-      ]]
+      ['options', []]
     ])
   ],
   [
@@ -214,7 +205,7 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Accept'],
-          ['target', 'main-menu']
+          ['target', 'fees-notice']
         ]),
       ]]
     ])
@@ -222,13 +213,21 @@ Atm.menus = new Map([
   [
     'main-menu',
     new Map([
-      ['content', '<h2>Main menu</h2><h3>{Please choose an option}</h3>'],
+      ['content', '<h2>{Please choose an action}</h2>'],
       ['options', [
-        new Map([['action', null]]),
-        new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', 'Withdrawal'],
+          ['label', 'Withdraw'],
+          ['target', 'brexit']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Bible inquiry'],
+          ['target', 'bible']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Balance Inquiry'],
           ['target', 'fees-notice']
         ]),
         new Map([
@@ -236,22 +235,61 @@ Atm.menus = new Map([
           ['label', 'Inquiry'],
           ['target', 'inquiry']
         ]),
-        new Map([['action', null]]),
-        new Map([['action', null]]),
         new Map([
           ['action', 'menu'],
-          ['label', "Change"],
+          ['label', 'Talk to customer support'],
           ['target', 'change-menu']
         ]),
         new Map([
           ['action', 'menu'],
-          ['label', 'Services'],
-          ['target', 'account-entry']
+          ['label', 'Change life'],
+          ['target', 'change-menu']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Disco mode'],
+          ['target', 'disco-mode']
         ])
-      ]]
+      ]],
+      ['onloadFn', 'bible-init']
     ])
   ],
-
+  [
+    'bible',
+    new Map([
+      ['content', '<h3>Followers: <span id="score">0</span></h3><div id="verse"></div>'],
+      ['options', [
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'Tithe'],
+          ['target', 'bible']
+        ]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'Pray harder'],
+          ['target', 'bible']
+        ]),
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'Open an abbey and brew beer'],
+          ['target', 'bible']
+        ]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'Eat a holy cracker'],
+          ['target', 'bible']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Renounce faith'],
+          ['target', 'main-menu']
+        ])
+      ]],
+      ['onloadFn', 'bible']
+    ])
+  ],
   [
     'fees-notice',
     new Map([
@@ -271,7 +309,7 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Please do it gently'],
-          ['target', 'last']
+          ['target', 'main-menu']
         ])
       ]]
     ])
@@ -279,9 +317,14 @@ Atm.menus = new Map([
   [
     'change-menu',
     new Map([
-      ['content', '<h3>{Please choose the setting to change}</h3>'],
+      ['content', '<h3>{What will you change?}</h3>'],
       ['options', [
         new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Money'],
+          ['target', 'account-entry']
+        ]),
         new Map([
           ['action', 'menu'],
           ['label', 'Pin'],
@@ -290,11 +333,6 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Alignment'],
-          ['target', 'account-entry']
-        ]),
-        new Map([
-          ['action', 'menu'],
-          ['label', 'Account balance'],
           ['target', 'account-entry']
         ]),
         new Map([['action', null]]),
@@ -312,6 +350,42 @@ Atm.menus = new Map([
           ['action', 'menu'],
           ['label', 'Gender'],
           ['target', 'index']
+        ])
+      ]]
+    ])
+  ],
+  [
+    'brexit',
+    new Map([
+      ['content', '<h2>{How do you feel about Brexit?}</h2>'],
+      ['options', [
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'I pretend to have an opinion so I appear smart'],
+          ['target', 'inter-saving']
+        ]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'I\'m an American, hence I couldn\'t care less'],
+          ['target', 'inter-saving']
+        ]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'I went to England on vacation once, so I\'m actually an expert'],
+          ['target', 'inter-saving']
+        ]),
+        new Map([
+          ['action', 'fn'],
+          ['label', 'What the hell is Brexit'],
+          ['target', 'inter-saving']
+        ]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Brexit back to the main menu'],
+          ['target', 'main-menu']
         ])
       ]]
     ])
