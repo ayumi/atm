@@ -61,9 +61,9 @@ Atm.App = class {
     this.audio.beep.play();
   }
 
+  // Disable during development
   resetInactivityTimer() {
-    // TODO: Reenable
-    return;
+    // return;
     clearTimeout(this.inactivityTimer)
     this.inactivityTimer = setTimeout(this.logout.bind(this), 30000);
   }
@@ -101,6 +101,7 @@ Atm.App = class {
     let buttan = this.getMenuElByIndex(index);
     buttan.className = 'menu pressed';
     this.beep();
+    this.resetInactivityTimer();
     setTimeout(this.menuPressedAction.bind(this), 400, index);
   }
 
