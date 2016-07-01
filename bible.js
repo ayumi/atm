@@ -19,8 +19,6 @@ Atm.bible = [
 
   '<h2>{Leviticus 20:27}</h2><p>{A man or a woman who acts as a medium or fortuneteller shall be put to death by stoning; they have no one but themselves to blame for their death.}</p>',
 
-  '<h2>{Deuteronomy 20:10}</h2><p>{As you approach a town to attack it, first offer its people terms for peace. If they accept your terms and open the gates to you, then all the people inside will serve you in forced labor.}</p><p>{But if they refuse to make peace and prepare to fight, you must attack the town. When the LORD your God hands it over to you, kill every man in the town.}</p><p>{But you may keep for yourselves all the women, children, livestock, and other plunder. You may enjoy the spoils of your enemies that the LORD your God has given you.}</p>',
-
   '<h2>{Deuteronomy 23:1}</h2><p>{No one whose testicles are crushed or whose male organ is cut off shall enter the assembly of the Lord.}</p>',
 
   '<h2>{Leviticus 19:19}</h2><p>{Do not wear clothing woven of two kinds of material.}</p>',
