@@ -12,7 +12,7 @@ HueHue.Hue = {
   },
 
   config : {
-    defaultApiRoot: "http://192.168.2.170/api/mytoken",
+    defaultApiRoot: "//localhost:80/api/mytoken",
     pollInterval: 5000
   },
 
