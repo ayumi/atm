@@ -6,12 +6,14 @@ body, html, iframe {
 }
 
 body {
+  cursor: none;
   overflow: hidden;
 }
 
 .column {
   /* Compensate for bottom menu option at the very bottom */
   bottom: -4%;
+  cursor: default;
   display: table;
   height: 104%;
   top: 0;
@@ -89,6 +91,7 @@ body {
 
 .menu {
   color: #333;
+  cursor: pointer;
   height: 17vh;
   line-height: 5vh;
   width: 100%;
