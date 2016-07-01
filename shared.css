@@ -50,6 +50,13 @@ body {
   width: 100%;
 }
 
+.content.tall {
+  bottom: 0;
+  height: 100%;
+  padding: 0;
+  top: 0;
+}
+
 .content.vcenter {
   top: 50%;
   transform: translateY(-50%);
@@ -92,4 +99,26 @@ body {
 /* Applied to .menu before first init */
 .hidden {
   display: none;
+}
+
+.rainbow {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet,red);
+	background-position: 0 0;
+  background-repeat: repeat-x;
+  position: relative;
+  z-index: -1;
+
+  animation: animateBackground 2s linear infinite;
+}
+
+.rainbow2 {
+  left: -100%;
+  animation: animateBackground2 2s linear infinite;
+}
+
+@keyframes animateBackground {
+  from { margin-left: 0; }
+  to { margin-left: 100%; }
 }

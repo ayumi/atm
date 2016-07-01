@@ -248,10 +248,10 @@ Atm.menus = new Map([
         new Map([
           ['action', 'menu'],
           ['label', 'Disco mode'],
-          ['target', 'disco-mode']
+          ['target', 'disco']
         ])
       ]],
-      ['onloadFn', 'bible-init']
+      ['onloadFn', 'main-menu-init']
     ])
   ],
   [
@@ -288,6 +288,28 @@ Atm.menus = new Map([
         ])
       ]],
       ['onloadFn', 'bible']
+    ])
+  ],
+  [
+    'disco',
+    new Map([
+      ['content', '<div class="rainbow" id="rainbow"><div class="rainbow rainbow2" id="rainbow"></div>'],
+      ['contentClass', 'wide tall'],
+      ['options', [
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([['action', null]]),
+        new Map([
+          ['action', 'menu'],
+          ['label', 'Take a break'],
+          ['target', 'main-menu']
+        ])
+      ]],
+      ['onloadFn', 'disco']
     ])
   ],
   [

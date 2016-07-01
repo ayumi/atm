@@ -1,3 +1,5 @@
+/*eslint-env es6 */
+
 Atm.bible = [
   '<h2>{Genesis 15:9}</h2><p>{The Lord answered, “Bring me a heifer three years old, a she-goat, three years old, a ram three years old, a turtle dove and a young pigeon.”}</p>',
 

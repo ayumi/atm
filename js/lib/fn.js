@@ -15,6 +15,12 @@ Atm.fn = new Map([
     }
   ],
   [
+    'disco',
+    () => {
+      Atm.led.disco();
+    }
+  ],
+  [
     'inter-belief',
     () => {
       window.app.visitMenu('belief');
@@ -45,10 +51,11 @@ Atm.fn = new Map([
     }
   ],
   [
-    'bible-init',
+    'main-menu-init',
     () => {
       // The first bible() increments.
       window.app.etc.bibleScore = -1;
+      Atm.led.reset();
     }
   ],
   [

@@ -11,7 +11,7 @@ Atm.App = class {
       content: document.getElementById('content')
     };
     this.audio = {
-      beep: new Audio('sounds/beep.mp3')
+      beep: new Audio('sounds/beep.ogg')
     };
     this.etc = {};
 
@@ -35,6 +35,9 @@ Atm.App = class {
     this.lang = Atm.lang.get('normcore');
     this.activeMenuId = null;
     this.visitMenu('index');
+
+    HueHue.Hue.fn.init(
+    Atm.led.reset);
   }
 
   setFont (font) {
