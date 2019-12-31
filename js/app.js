@@ -26,11 +26,18 @@ Atm.App = class {
       document.fonts.add(loadedFace);
     });
 
-    var f = new FontFace("vt323", "url(fonts/vt323/vt323-regular.ttf)", {});
+    //var f = new FontFace("vt323", "url(fonts/vt323/vt323-regular.ttf)", {});
+    //f.load().then(function (loadedFace) {
+      //document.fonts.add(loadedFace);
+      //this.setFont("vt323");
+    //}.bind(this));
+
+    var f = new FontFace("impact", "url(fonts/impact/impact.ttf)", {});
     f.load().then(function (loadedFace) {
       document.fonts.add(loadedFace);
-      this.setFont("vt323");
+      this.setFont("impact");
     }.bind(this));
+
 
     this.lang = Atm.lang.get('normcore');
     this.activeMenuId = null;
@@ -51,7 +58,7 @@ Atm.App = class {
     if (this.activeMenuId !== 'index') {
       this.visitMenu('logout');
       this.lang = Atm.lang.get('normcore');
-      this.setFont("vt323");
+      this.setFont("impact");
       setTimeout(this.visitMenu.bind(this), 3000, 'index')
     }
   }

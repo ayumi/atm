@@ -5,7 +5,7 @@ Atm.menus = new Map([
   [
     'index',
     new Map([
-      ['content', '<h1>{Welcome}</h1><h2>{To Priceless}</h2><p>{Please insert card for service}</p>'],
+      ['content', '<h1>{Get Cash}</h1>'],
       ['contentClass', 'wide'],
       ['options', [
         new Map([['action', null]]),

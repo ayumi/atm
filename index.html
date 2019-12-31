@@ -11,20 +11,28 @@
       }
 
       body {
-        background-color: #000082;
-        color: #ff0;
-        font-size: calc(1.25em + 2vmin);
+        background-image: url(images/cash.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        color: #fff;
+        font-size: calc(2.25em + 2vmin);
         text-transform: uppercase;
+        -webkit-text-stroke: 3px black;
       }
 
       .menu {
-        background: #ccc;
+        line-height: 100%;
+        background:rgba(0,0,0,0.5);
         font-size: calc(0.65em + 2vmin);
+        -webkit-text-stroke: 1px black;
       }
 
       .menu.pressed {
-        background: #666;
-        color: #fff;
+        background:rgba(102,102,102,0.5);
+        color: #000;
+        -webkit-text-stroke: 1px white;
       }
     </style>
   </head>

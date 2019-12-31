@@ -74,7 +74,7 @@ Atm.fn = new Map([
     'language-normcore',
     () => {
       window.app.lang = Atm.lang.get('normcore');
-      window.app.setFont("vt323");
+      window.app.setFont("impact");
       window.app.visitMenu('last');
     }
   ],
@@ -82,7 +82,7 @@ Atm.fn = new Map([
     'language-cockney',
     () => {
       window.app.lang = Atm.lang.get('cockney');
-      window.app.setFont("vt323");
+      window.app.setFont("impact");
       window.app.visitMenu('last');
     }
   ],
@@ -90,7 +90,7 @@ Atm.fn = new Map([
     'language-canadian',
     () => {
       window.app.lang = Atm.lang.get('canadian');
-      window.app.setFont("vt323");
+      window.app.setFont("impact");
       window.app.visitMenu('last');
     }
   ],
@@ -106,7 +106,7 @@ Atm.fn = new Map([
     'language-l33t',
     () => {
       window.app.lang = Atm.lang.get('leet');
-      window.app.setFont("vt323");
+      window.app.setFont("impact");
       window.app.visitMenu('last');
     }
   ],
